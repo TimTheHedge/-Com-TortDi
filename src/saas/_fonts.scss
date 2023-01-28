@@ -1,0 +1,21 @@
+@font-face {
+	font-family: 'AmadeusAP';
+	src: url('../fonts/AmadeusAP.woff2') format('woff2'),
+			url('../fonts/AmadeusAP.woff') format('woff'),
+			url('../fonts/AmadeusAP.ttf') format('truetype'),
+			url('../fonts/AmadeusAP.svg#AmadeusAP') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'SFPro';
+	src: url('../fonts/SFProDisplay-Regular.woff2') format('woff2'),
+			url('../fonts/SFProDisplay-Regular.woff') format('woff'),
+			url('../fonts/SFProDisplay-Regular.ttf') format('truetype'),
+			url('../fonts/SFProDisplay-Regular.svg#SFProDisplay-Regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

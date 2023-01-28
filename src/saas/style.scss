@@ -1,0 +1,24 @@
+@import "_reset.scss";
+@import "_fonts.scss";
+
+body {
+	height: 100%;
+
+	background: #50565C;
+
+	font-family: 'SFPro', serif;
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+}
+
+._container {
+	max-width: 1430px;
+	margin: 0 auto;
+	padding: 0 30px;
+	box-sizing: content-box;
+}
+
+@import "_header.scss";
