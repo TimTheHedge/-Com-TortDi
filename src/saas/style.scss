@@ -12,6 +12,7 @@ body {
 .wrapper {
 	min-height: 100%;
 	overflow: hidden;
+	padding: 0 5px;
 }
 
 ._container {
@@ -19,6 +20,10 @@ body {
 	margin: 0 auto;
 	padding: 0 30px;
 	box-sizing: content-box;
+}
+
+.noScroll {
+	overflow: hidden;
 }
 
 @import "_header.scss";
