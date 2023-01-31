@@ -1,8 +1,23 @@
 @import "_reset.scss";
 @import "_fonts.scss";
 
+:root {
+	--imcbl-send-bg-color: #E5E5EA;
+	--imcbl-send-text-color: white;
+	--imcbl-receive-bg: #0B93F6;
+	--imcbl-receive-text-color: #171717
+
+	--animate-delay: 0.5s;
+}
+
 body {
 	height: 100%;
+
+	padding-top: 110px;
+
+	@media (max-width: 900px) {
+		padding-top: 70px;
+	}
 
 	background: #50565C;
 
@@ -26,4 +41,20 @@ body {
 	overflow: hidden;
 }
 
+
+.yellow-button {
+	padding: .35em 1.5em; 
+
+	background: linear-gradient(94.43deg, #E99F10 10.06%, #FFBE40 91.18%);
+	box-shadow: 0px 0px 100px 3px rgba(222, 174, 81, 0.44), 0px 7px 0px 1px #926D24;
+	border-radius: .7em;
+
+	font-family: 'SFPro';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 34px;
+	line-height: 120.588235%; /* 41px/34 */
+}
+
 @import "_header.scss";
+@import "_intro-section.scss";
