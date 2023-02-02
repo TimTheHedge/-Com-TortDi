@@ -2,9 +2,10 @@
 	height: 70vh;
 	width: 100%;
 
+	z-index: 10;
+
 	position: fixed;
 	top: calc(-70vh + 80px);
-	// top: 0;
 	left: 0;
 
 	background: rgba(255, 255, 255, 0.35);
