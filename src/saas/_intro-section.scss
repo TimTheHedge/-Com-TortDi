@@ -10,7 +10,7 @@
 			"chat di__img"
 			"button di__img"; 
 
-		height: calc(100vh - 200px);
+		height: calc(100vh - 150px);
 	}
 
 	&__chat {
@@ -22,18 +22,25 @@
 
 		justify-self: center;
 		align-self: center;
+
+		margin: 20px;
 	}
 
 	&__yellow-button {
-		font-size: clamp(25px, calc(1.5625rem + (34 - 25) * ((100vw - 1024px) / (1920 - 1024))), 34px);
-		min-height: 0vw;
+		// Adaptive font-size
+		@media (min-width: 319px) {
+			font-size: calc(1.0625rem + (34 - 17) * ((100vw - 320px) / (1920 - 320)));
+			min-height: 0vw;
+		}
+		
+		@media (min-width: 1920px) {
+			font-size: 34px;
+		}
 
 		transition: .3s ease-in-out;
 
 		&:hover {
-
-
-			box-shadow: 0px 0px 100px 3px rgba(222, 175, 81, 0.766), 0px 7px 0px 1px #926D24;
+			box-shadow: 0px 0px 100px 3px rgba(222, 175, 81, 0.766), 0px .205em 0px 1px #926D24;
 		}
 
 		&:active {
@@ -55,21 +62,15 @@
 .chat {
 	align-self: center;
 
-	@media (min-width: 1024px) {
+	@media (min-width: 320px) {
 		p {
-			font-size: calc(1.5rem + (34 - 24) * ((100vw - 1024px) / (1920 - 1024)));
+			font-size: calc(0.8125rem + (34 - 13) * ((100vw - 320px) / (1920 - 320)));
 			min-height: 0vw;
 		}
 	}
 	@media (min-width: 1920px) {
 		p {
 			font-size: 34px;
-		}
-	}
-
-	@media (max-width: 1024px) {
-		p {
-			font-size: 13px;
 		}
 	}
 
@@ -114,7 +115,7 @@
 		
 
 		background: rgba(255, 255, 255, 0.4);
-		box-shadow: 0 10px 8px 1px rgba(0, 0, 0, 0.25);
+		box-shadow: 0 0.14em 8px 1px rgba(0, 0, 0, 0.25);
 		backdrop-filter: blur(10px);
 
 		border-radius: .7em;
@@ -124,11 +125,15 @@
 		font-family: 'AmadeusAP';
 		font-style: normal;
 		font-weight: 400;
-		font-size: clamp(40px, calc(2.5rem + (70 - 40) * ((100vw - 1024px) / (1920 - 1024))), 70px);
-		@media (max-width: 1024px) {
-				font-size: 17px;
+		// Adaptive font-size
+		@media (min-width: 320px) {
+			font-size: calc(1.0625rem + (70 - 17) * ((100vw - 320px) / (1920 - 320)));
+			min-height: 0vw;
 		}
-  min-height: 0vw;
+		@media (min-width: 1920px) {
+			font-size: 70px;
+		}
+		min-height: 0vw;
 		line-height: 90%;
 		white-space: nowrap;
 		color: #171717;
@@ -153,18 +158,57 @@
 		grid-template-areas: 
 			"chat di__img"
 			"button button"; 
+	}
 
-		// height: 497px;
+	@media (max-width: 1024px) {
+		// Adaptive name tag font size
+		@media (min-width: 320px) {
+			.di__name-tag {
+				font-size: calc(1.0625rem + (54 - 17) * ((100vw - 320px) / (1024 - 320)));
+				min-height: 0vw;
+			}
+		}
+		@media (min-width: 1024px) {
+			.di__name-tag {
+				font-size: 54px;
+			}
+		}
+
+		// Adaptive chat font size
+		@media (min-width: 319px) {
+			.chat p {
+				font-size: calc(0.6875rem + (27 - 11) * ((100vw - 320px) / (1024 - 320)));
+				min-height: 0vw;
+			}
+		}
+		@media (min-width: 1024px) {
+			.chat p {
+				font-size: 27px;
+			}
+		}
+
+		// Adaptive button font size
+		@media (min-width: 319px) {
+			.intro__yellow-button {
+				font-size: calc(0.9375rem + (40 - 15) * ((100vw - 320px) / (1024 - 320)));
+				min-height: 0vw;
+			}
+		}
+		@media (min-width: 1024px) {
+			.intro__yellow-button {
+				font-size: 40px;
+			}
+		}
 	}
 }
 
 @media (max-width: 425px) {
 	.intro__container {
-		padding: 0 5px;
+		padding: 0;
 	}
 
 	:root {
-		--imcb-
+		--imcbl-bubble-max-width: 95%;
 	}
 }
 

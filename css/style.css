@@ -102,9 +102,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 :root {
   --imcbl-send-bg-color: #E5E5EA;
-  --imcbl-send-text-color: white;
-  --imcbl-receive-bg: #0B93F6;
-  --imcbl-receive-text-color: #171717
+  --imcbl-send-text-color: #171717;
+  --imcbl-receive-bg-color: #0B93F6;
+  --imcbl-receive-text-color: white;
+  --imcbl-page-bg-color: #50565C;
   --animate-delay: 0.5s;
 }
 
@@ -142,14 +143,15 @@ body {
   padding: 0.35em 1.5em;
   background: -o-linear-gradient(355.57deg, #E99F10 10.06%, #FFBE40 91.18%);
   background: linear-gradient(94.43deg, #E99F10 10.06%, #FFBE40 91.18%);
-  -webkit-box-shadow: 0px 0px 100px 3px rgba(222, 174, 81, 0.44), 0px 7px 0px 1px #926D24;
-          box-shadow: 0px 0px 100px 3px rgba(222, 174, 81, 0.44), 0px 7px 0px 1px #926D24;
+  -webkit-box-shadow: 0px 0px 100px 3px rgba(222, 174, 81, 0.44), 0px 0.205em 0px 1px #926D24;
+          box-shadow: 0px 0px 100px 3px rgba(222, 174, 81, 0.44), 0px 0.205em 0px 1px #926D24;
   border-radius: 0.7em;
   font-family: "SFPro";
   font-style: normal;
   font-weight: 400;
   font-size: 34px;
   line-height: 120.588235%; /* 41px/34 */
+  color: #171717;
 }
 
 .header {
@@ -401,7 +403,7 @@ body {
   grid-template-rows: 1fr 0.5fr;
   gap: 0px 0px;
   grid-template-areas: "chat di__img" "button di__img";
-  height: calc(100vh - 200px);
+  height: calc(100vh - 150px);
 }
 .intro__chat {
   grid-area: chat;
@@ -410,17 +412,27 @@ body {
   grid-area: button;
   justify-self: center;
   align-self: center;
+  margin: 20px;
 }
 .intro__yellow-button {
-  font-size: clamp(25px, 1.5625rem + 9 * (100vw - 1024px) / 896, 34px);
-  min-height: 0vw;
   -webkit-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
+@media (min-width: 319px) {
+  .intro__yellow-button {
+    font-size: calc(1.0625rem + 17 * (100vw - 320px) / 1600);
+    min-height: 0vw;
+  }
+}
+@media (min-width: 1920px) {
+  .intro__yellow-button {
+    font-size: 34px;
+  }
+}
 .intro__yellow-button:hover {
-  -webkit-box-shadow: 0px 0px 100px 3px rgba(222, 175, 81, 0.766), 0px 7px 0px 1px #926D24;
-          box-shadow: 0px 0px 100px 3px rgba(222, 175, 81, 0.766), 0px 7px 0px 1px #926D24;
+  -webkit-box-shadow: 0px 0px 100px 3px rgba(222, 175, 81, 0.766), 0px 0.205em 0px 1px #926D24;
+          box-shadow: 0px 0px 100px 3px rgba(222, 175, 81, 0.766), 0px 0.205em 0px 1px #926D24;
 }
 .intro__yellow-button:active {
   -webkit-transition: 0.1s ease-in-out;
@@ -441,20 +453,15 @@ body {
   -ms-flex-item-align: center;
       align-self: center;
 }
-@media (min-width: 1024px) {
+@media (min-width: 320px) {
   .chat p {
-    font-size: calc(1.5rem + 10 * (100vw - 1024px) / 896);
+    font-size: calc(0.8125rem + 21 * (100vw - 320px) / 1600);
     min-height: 0vw;
   }
 }
 @media (min-width: 1920px) {
   .chat p {
     font-size: 34px;
-  }
-}
-@media (max-width: 1024px) {
-  .chat p {
-    font-size: 13px;
   }
 }
 .chat__flex {
@@ -494,8 +501,8 @@ body {
           transform: translate(-50%, 0);
   bottom: 0;
   background: rgba(255, 255, 255, 0.4);
-  -webkit-box-shadow: 0 10px 8px 1px rgba(0, 0, 0, 0.25);
-          box-shadow: 0 10px 8px 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0.14em 8px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0.14em 8px 1px rgba(0, 0, 0, 0.25);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   border-radius: 0.7em;
@@ -503,15 +510,20 @@ body {
   font-family: "AmadeusAP";
   font-style: normal;
   font-weight: 400;
-  font-size: clamp(40px, 2.5rem + 30 * (100vw - 1024px) / 896, 70px);
   min-height: 0vw;
   line-height: 90%;
   white-space: nowrap;
   color: #171717;
 }
-@media (max-width: 1024px) {
+@media (min-width: 320px) {
   .di__name-tag {
-    font-size: 17px;
+    font-size: calc(1.0625rem + 53 * (100vw - 320px) / 1600);
+    min-height: 0vw;
+  }
+}
+@media (min-width: 1920px) {
+  .di__name-tag {
+    font-size: 70px;
   }
 }
 
@@ -529,8 +541,44 @@ body {
     grid-template-areas: "chat di__img" "button button";
   }
 }
+@media (orientation: portrait) and (max-width: 1024px) and (min-width: 320px) {
+  .di__name-tag {
+    font-size: calc(1.0625rem + 37 * (100vw - 320px) / 704);
+    min-height: 0vw;
+  }
+}
+@media (orientation: portrait) and (max-width: 1024px) and (min-width: 1024px) {
+  .di__name-tag {
+    font-size: 54px;
+  }
+}
+@media (orientation: portrait) and (max-width: 1024px) and (min-width: 319px) {
+  .chat p {
+    font-size: calc(0.6875rem + 16 * (100vw - 320px) / 704);
+    min-height: 0vw;
+  }
+}
+@media (orientation: portrait) and (max-width: 1024px) and (min-width: 1024px) {
+  .chat p {
+    font-size: 27px;
+  }
+}
+@media (orientation: portrait) and (max-width: 1024px) and (min-width: 319px) {
+  .intro__yellow-button {
+    font-size: calc(0.9375rem + 25 * (100vw - 320px) / 704);
+    min-height: 0vw;
+  }
+}
+@media (orientation: portrait) and (max-width: 1024px) and (min-width: 1024px) {
+  .intro__yellow-button {
+    font-size: 40px;
+  }
+}
 @media (max-width: 425px) {
   .intro__container {
-    padding: 0 5px;
+    padding: 0;
+  }
+  :root {
+    --imcbl-bubble-max-width: 95%;
   }
 }
