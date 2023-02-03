@@ -79,7 +79,12 @@
 		flex-direction: column;
 
 		padding: 10px;
+		// padding-right: 20px;
 	}
+}
+
+.carusel-2, .carusel-3{
+	display: none;
 }
 
 
@@ -95,18 +100,13 @@
 			max-width: 100%;
 			margin: 0 auto;
 
-			// position: absolute;
-			// top: 0;
-			// left: 50%;
-
-			// transform: translate(-50%, 0);
-
 			object-fit: cover;
 			object-position: right;
 
 			align-self: center;
 		}
 	}
+	
 	&__name-tag {
 		position: absolute;
 		left: 50%;
@@ -138,6 +138,95 @@
 		white-space: nowrap;
 		color: #171717;
 	}
+
+	&__circle-1 {
+		width: 120%;
+
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translate(0, -50%);
+
+		overflow: visible;
+
+		z-index: -1;
+	}
+
+	&__circle-2 {
+		width: 100%;
+
+		position: absolute;
+		left: 60%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+
+		overflow: visible;
+
+		z-index: -1;
+	}
+
+	&__light-1 {
+		width: 80%;
+
+		position: absolute;
+		left: 20%;
+		top: 20%;
+		// transform: translate(0, 0);
+
+		overflow: visible;
+
+		filter: blur(calc(1.25rem + (90 - 20) * ((100vw - 320px) / (1920 - 320))));
+		-webkit-filter: blur(calc(1.25rem + (90 - 20) * ((100vw - 320px) / (1920 - 320))));
+
+		z-index: -4;
+
+		// animation-name: light-1;
+		// animation-duration: 8s;
+		// animation-timing-function: ease-in-out;
+		// animation-iteration-count: infinite;
+		// animation-direction: alternate;
+
+	}
+
+	&__light-2 {
+		width: 80%;
+
+		position: absolute;
+		right: -20%;
+		top: 20%;
+		// transform: translate(0, 0);
+
+		overflow: visible;
+
+		filter: blur(calc(1.25rem + (90 - 20) * ((100vw - 320px) / (1920 - 320))));
+
+		z-index: -3;
+
+		// animation-name: light-2;
+		// animation-duration: 8s;
+		// animation-timing-function: ease-in-out;
+		// animation-iteration-count: infinite;
+		// animation-direction: alternate;
+	}
+
+	@keyframes light-1 {
+		0%{
+			left: 20%;
+		}
+		100%{
+			left: 50%
+		}
+	}
+
+	@keyframes light-2 {
+		0%{
+			right: -20%;
+		}
+		100%{
+			right: 15%
+		}
+	}
+
 }
 
 @media (orientation: portrait) {
@@ -210,8 +299,4 @@
 	:root {
 		--imcbl-bubble-max-width: 95%;
 	}
-}
-
-.carusel-2, .carusel-3{
-	display: none;
 }
