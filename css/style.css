@@ -478,6 +478,10 @@ body {
   padding: 10px;
 }
 
+.carusel-2, .carusel-3 {
+  display: none;
+}
+
 .di {
   height: 100%;
 }
@@ -527,6 +531,80 @@ body {
 @media (min-width: 1920px) {
   .di__name-tag {
     font-size: 70px;
+  }
+}
+.di__circle-1 {
+  width: 120%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  overflow: visible;
+  z-index: -1;
+}
+.di__circle-2 {
+  width: 100%;
+  position: absolute;
+  left: 60%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow: visible;
+  z-index: -1;
+}
+.di__light-1 {
+  width: 80%;
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  overflow: visible;
+  filter: blur(calc(1.25rem + 70 * (100vw - 320px) / 1600));
+  -webkit-filter: blur(calc(1.25rem + 70 * (100vw - 320px) / 1600));
+  z-index: -4;
+}
+.di__light-2 {
+  width: 80%;
+  position: absolute;
+  right: -20%;
+  top: 20%;
+  overflow: visible;
+  -webkit-filter: blur(calc(1.25rem + 70 * (100vw - 320px) / 1600));
+          filter: blur(calc(1.25rem + 70 * (100vw - 320px) / 1600));
+  z-index: -3;
+}
+@-webkit-keyframes light-1 {
+  0% {
+    left: 20%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+@keyframes light-1 {
+  0% {
+    left: 20%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+@-webkit-keyframes light-2 {
+  0% {
+    right: -20%;
+  }
+  100% {
+    right: 15%;
+  }
+}
+@keyframes light-2 {
+  0% {
+    right: -20%;
+  }
+  100% {
+    right: 15%;
   }
 }
 
@@ -584,7 +662,4 @@ body {
   :root {
     --imcbl-bubble-max-width: 95%;
   }
-}
-.carusel-2, .carusel-3 {
-  display: none;
 }
